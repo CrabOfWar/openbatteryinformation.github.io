@@ -6,3 +6,7 @@ open-battery-information/
 # Local web server / editor noise
 .DS_Store
 Thumbs.db
+
+# Cloudflare Pages upload bundle (rebuild with: python make-site-zip.py)
+obi-site.zip
+_site/
