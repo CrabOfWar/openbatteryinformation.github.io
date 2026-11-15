@@ -10,3 +10,6 @@ Thumbs.db
 # Cloudflare Pages upload bundle (rebuild with: python make-site-zip.py)
 obi-site.zip
 _site/
+
+# Never commit credentials
+cloudflare-token.txt
