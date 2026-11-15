@@ -1,0 +1,12 @@
+# Part of the repo, not part of the website.
+.git
+.github
+.freebuff
+desktop
+node_modules
+README.md
+make-site-zip.py
+obi-site.zip
+wrangler.jsonc
+.assetsignore
+.gitignore
