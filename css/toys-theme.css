@@ -1,0 +1,130 @@
+/* ============================================================
+   Shirleys Toys theme layer for the OBI site.
+   Loaded after the site's own stylesheets, so these tokens and
+   font stacks win without touching the original CSS files.
+   Palette + type borrowed from toys.shirleysgroup.co.uk:
+     ink #090909 · cream #fff1e9 · orange #ff5b1a · burnt #dc5a2d
+     Roboto Slab (display) · DM Sans (body)
+   ============================================================ */
+
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Roboto+Slab:wght@700;800;900&display=swap");
+
+:root {
+  /* surfaces */
+  --bg: #090909;
+  --bg-elevated: #151312;
+  --bg-input: #100f0e;
+  --bg-code: #0b0a0a;
+  --border: #332e2a;
+  --border-strong: #48413a;
+
+  /* text */
+  --text: #fff8f4;
+  --text-dim: #bcaea4;
+
+  /* brand — toys orange replaces obi red */
+  --accent: #ff5b1a;
+  --accent-hover: #dc5a2d;
+  --accent-1: #ff7a45;
+  --accent-2: #ff5b1a;
+  --accent-3: #b03c10;
+
+  /* interaction */
+  --hover-bg: #1d1917;
+  --hover-border: #64564b;
+  --row-alt: #121110;
+  --row-hover: #1e1a17;
+  --row-selected: #3c2012;
+  --feature-tint: #2e2115;
+
+  /* glows */
+  --glow-1: rgba(255, 91, 26, 0.3);
+  --glow-2: rgba(220, 90, 45, 0.26);
+
+  /* status */
+  --danger: #ff5454;
+  --ok: #35c95e;
+  --warn: #e0a63c;
+  --log-ok: #8fdc9c;
+  --log-err: #ff8f8f;
+  --log-warn: #ecc077;
+  --log-send: #ff9a7a;
+
+  /* type */
+  --font-sans: "DM Sans", "Segoe UI", Arial, sans-serif;
+  --font-display: "Roboto Slab", Georgia, serif;
+}
+
+/* cream / paper variant of the theme toggle */
+[data-theme="light"] {
+  --bg: #fff1e9;
+  --bg-elevated: #fff9f5;
+  --bg-input: #fffaf6;
+  --bg-code: #f8ece3;
+  --border: #ecd9ca;
+  --border-strong: #dcc4b2;
+
+  --text: #090909;
+  --text-dim: #6d6058;
+
+  --accent: #ff5b1a;
+  --accent-hover: #b03c10;
+  --accent-1: #ff7a45;
+  --accent-2: #ff5b1a;
+  --accent-3: #b03c10;
+
+  --hover-bg: #ffe9dc;
+  --hover-border: #e3bda6;
+  --row-alt: #fff6ef;
+  --row-hover: #ffeadf;
+  --row-selected: #ffdcc7;
+  --feature-tint: #fdece0;
+
+  --glow-1: rgba(255, 91, 26, 0.22);
+  --glow-2: rgba(176, 60, 16, 0.18);
+
+  --danger: #c0281f;
+  --ok: #128525;
+  --warn: #8a5a08;
+  --log-ok: #128525;
+  --log-err: #c41e1e;
+  --log-warn: #96690a;
+  --log-send: #b03c10;
+}
+
+/* --- typography: slab display, DM Sans for everything else --- */
+
+body,
+button,
+input,
+select,
+textarea,
+.navbar {
+  font-family: var(--font-sans);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.navbar .brand,
+.hero h1,
+.section h2,
+.section h3 {
+  font-family: var(--font-display);
+  letter-spacing: -0.015em;
+}
+
+h1,
+h2,
+.hero h1,
+.section h2 {
+  font-weight: 800;
+}
+
+h3,
+h4 {
+  font-weight: 700;
+}
