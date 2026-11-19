@@ -28,18 +28,18 @@ jobs:
           curl -fL --retry 5 --retry-delay 10 -o firmware/esp32.bin \
             https://github.com/mnh-jansson/open-battery-information/releases/latest/download/esp32.bin
 
-              # Purely informational: the binaries are already downloaded above, so this
-        # step must never fail the job. It is also authenticated, because an
-        # unauthenticated call to api.github.com from a shared runner IP regularly
-        # hits the 60/hour rate limit and returns a JSON error instead of a release.
-        - name: Show the upstream release this firmware came from
-          continue-on-error: true
-          run: |
-            curl -fsSL --retry 5 --retry-delay 10 \
-              -H "Authorization: Bearer ${{ github.token }}" \
-              -H "Accept: application/vnd.github+json" \
-              https://api.github.com/repos/mnh-jansson/open-battery-information/releases/latest \
-              | python3 -c "import json, sys; r = json.load(sys.stdin); print('upstream tag:', r.get('tag_name'), '| published:', r.get('published_at'))"
+      # Purely informational: the binaries are already downloaded above, so this
+      # step must never fail the job. It is also authenticated, because an
+      # unauthenticated call to api.github.com from a shared runner IP regularly
+      # hits the 60/hour rate limit and returns a JSON error instead of a release.
+      - name: Show the upstream release this firmware came from
+        continue-on-error: true
+        run: |
+          curl -fsSL --retry 5 --retry-delay 10 \
+            -H "Authorization: Bearer ${{ github.token }}" \
+            -H "Accept: application/vnd.github+json" \
+            https://api.github.com/repos/mnh-jansson/open-battery-information/releases/latest \
+            | python3 -c "import json, sys; r = json.load(sys.stdin); print('upstream tag:', r.get('tag_name'), '| published:', r.get('published_at'))"
 
       - name: Commit updated firmware
         uses: stefanzweifel/git-auto-commit-action@v5
